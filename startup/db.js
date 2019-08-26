@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const db =
-  "mongodb://mosamy:Mosamy1234@cluster0-shard-00-00-ui6cx.mongodb.net:27017/test?retryWrites=true&w=majority";
+  "mongodb+srv://mosamy:msamy1234@cluster0-shard-00-00-ui6cx.mongodb.net:27017/test?authSource=admin";
 
 module.exports = function() {
   mongoose.set("useCreateIndex", true);
