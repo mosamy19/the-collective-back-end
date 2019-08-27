@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const db =
-  "mongodb+srv://mosamy:msamy1234@cluster0-shard-00-00-ui6cx.mongodb.net:27017/test?authSource=admin";
+const db = "mongodb://localhost/theCollective";
 
 module.exports = function() {
   mongoose.set("useCreateIndex", true);
