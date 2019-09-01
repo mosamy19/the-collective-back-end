@@ -9,9 +9,9 @@ router.get("/:userId", async (req, res) => {
 });
 
 router.post("/:userId", async (req, res) => {
-  const { title, body } = req.body;
+  const { date, title, body } = req.body;
   const { userId } = req.params;
-  let note = new Note({ profile: userId, title, body });
+  let note = new Note({ profile: userId, date, title, body });
   await note.save();
   res.send(note);
 });

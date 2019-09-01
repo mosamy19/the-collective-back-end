@@ -17,7 +17,15 @@ const profileSchema = new Schema({
     type: String,
     maxlength: 50
   },
-  location: {
+  city: {
+    type: String,
+    maxlength: 255
+  },
+  state: {
+    type: String,
+    maxlength: 255
+  },
+  country: {
     type: String,
     maxlength: 255
   },

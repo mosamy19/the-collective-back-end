@@ -15,6 +15,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
     maxlength: 1024
+  },
+  resetPasswordToken: {
+    type: String
+  },
+  resetPasswordExpires: {
+    type: Date
   }
 });
 

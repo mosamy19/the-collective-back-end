@@ -23,8 +23,14 @@ router.get("/search/:query", async (req, res) => {
       lastName: () => {
         if (lastName) return lastName;
       },
-      location: () => {
-        if (location) return location;
+      city: () => {
+        if (city) return city;
+      },
+      state: () => {
+        if (state) return state;
+      },
+      country: () => {
+        if (country) return country;
       },
       profileImg: () => {
         if (profileImg) return profileImg;
@@ -94,7 +100,9 @@ router.put("/update-profile/:userId", async (req, res) => {
     profileImg,
     firstName,
     lastName,
-    location,
+    city,
+    state,
+    country,
     primaryEmail,
     email,
     primaryPhone,
@@ -110,7 +118,9 @@ router.put("/update-profile/:userId", async (req, res) => {
     profileImg,
     firstName,
     lastName,
-    location,
+    city,
+    state,
+    country,
     primaryEmail,
     email,
     primaryPhone,
@@ -138,7 +148,9 @@ router.post("/", async (req, res) => {
     profileImg,
     firstName,
     lastName,
-    location,
+    city,
+    state,
+    country,
     primaryEmail,
     email,
     primaryPhone,
@@ -153,7 +165,9 @@ router.post("/", async (req, res) => {
     profileImg,
     firstName,
     lastName,
-    location,
+    city,
+    state,
+    country,
     primaryEmail,
     email,
     primaryPhone,

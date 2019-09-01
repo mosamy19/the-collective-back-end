@@ -8,16 +8,15 @@ const noteSchema = new Schema({
     ref: "Profile"
   },
   date: {
-    default: Date.now,
-    type: Date,
-    maxlength: 255
+    type: Date
   },
   title: {
     type: String,
     maxlength: 255
   },
   body: {
-    type: String
+    type: String,
+    maxlength: 255
   }
 });
 
