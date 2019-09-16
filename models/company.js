@@ -4,14 +4,18 @@ const { Schema } = mongoose;
 
 const companySchema = new Schema({
   name: {
-    type: String,
-    maxlength: 255
+    type: String
   },
   location: {
-    type: String,
-    maxlength: 255
+    type: String
   },
   website: {
+    type: String
+  },
+  description: {
+    type: String
+  },
+  logoImg: {
     type: String
   }
 });

@@ -1,33 +1,31 @@
 const mongoose = require("mongoose");
-
+const { superpowerSchema } = require("./superpower");
+const { weaknessSchema } = require("./weakness");
 const { Schema } = mongoose;
 
-const characterSchema = new Schema({
-  name: {
-    type: String
+const emailSchema = new Schema({
+  value: String,
+  isPrimary: {
+    type: Boolean,
+    default: false
+  }
+});
+
+const phoneSchema = new Schema({
+  value: String,
+  isPrimary: {
+    type: Boolean,
+    default: false
   }
 });
 
 const profileSchema = new Schema({
-  firstName: {
+  name: {
     type: String,
     maxlength: 50
   },
-  lastName: {
-    type: String,
-    maxlength: 50
-  },
-  city: {
-    type: String,
-    maxlength: 255
-  },
-  state: {
-    type: String,
-    maxlength: 255
-  },
-  country: {
-    type: String,
-    maxlength: 255
+  location: {
+    type: String
   },
   profileImg: {
     type: String
@@ -36,27 +34,17 @@ const profileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Note"
   },
-  primaryEmail: {
-    type: String,
-    maxlength: 255
+  star: {
+    type: Boolean,
+    default: false
   },
-  email: {
-    type: String,
-    maxlength: 255
-  },
-  primaryPhone: {
-    type: String,
-    maxlength: 255
-  },
-  phone: {
-    type: String,
-    maxlength: 255
-  },
+  emails: [emailSchema],
+  phones: [phoneSchema],
   bio: {
     type: String
   },
-  superpowers: [characterSchema],
-  weaknesses: [characterSchema],
+  superpowers: [superpowerSchema],
+  weaknesses: [weaknessSchema],
   companies: [
     {
       type: Schema.Types.ObjectId,
@@ -78,6 +66,10 @@ const profileSchema = new Schema({
   linkedIn: {
     type: String,
     maxlength: 255
+  },
+  karma: {
+    type: Number,
+    default: 100
   }
 });
 
