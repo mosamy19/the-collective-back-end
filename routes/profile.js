@@ -169,7 +169,7 @@ router.put("/update-socail-media/:userId", async (req, res) => {
 router.put("/update-profile/:userId", async (req, res) => {
   const { userId } = req.params;
   const { profileImg, name, location, emails, phones, bio } = req.body;
-
+  console.log(phones);
   await Profile.findByIdAndUpdate(userId, {
     profileImg,
     name,
@@ -205,6 +205,7 @@ router.post("/", async (req, res) => {
   const {
     profileImg,
     name,
+    location,
     emails,
     phones,
     bio,
@@ -215,6 +216,7 @@ router.post("/", async (req, res) => {
   const profile = new Profile({
     profileImg,
     name,
+    location,
     emails,
     phones,
     bio,

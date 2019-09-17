@@ -12,6 +12,7 @@ const emailSchema = new Schema({
 });
 
 const phoneSchema = new Schema({
+  prefix: String,
   value: String,
   isPrimary: {
     type: Boolean,
